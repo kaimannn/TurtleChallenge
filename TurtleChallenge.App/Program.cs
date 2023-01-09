@@ -9,7 +9,7 @@ int exitCode = -1;
 try
 {
     var serviceProvider = new ServiceCollection()
-        .AddSingleton<IRepositoryService>(sp => new LoadJsonConfigService(jsonFileSettings, jsonFileSequences))
+        .AddSingleton<IRepository>(sp => new LoadJsonConfigService(jsonFileSettings, jsonFileSequences))
         .AddSingleton<IGameService, GameService>()
         .BuildServiceProvider();
 

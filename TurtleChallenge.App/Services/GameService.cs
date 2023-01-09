@@ -10,11 +10,11 @@ public interface IGameService
 
 public class GameService : IGameService
 {
-    private readonly IRepositoryService _loadTurtleGameService;
+    private readonly IRepository _loadTurtleGameService;
 
-    public GameService(IRepositoryService fileService)
+    public GameService(IRepository loadTurtleGameService)
     {
-        _loadTurtleGameService = fileService;
+        _loadTurtleGameService = loadTurtleGameService;
     }
 
     public void Start()

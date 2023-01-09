@@ -5,7 +5,7 @@ using TurtleChallenge.App.Entities;
 
 namespace TurtleChallenge.App.Services;
 
-public class LoadJsonConfigService : IRepositoryService
+public class LoadJsonConfigService : IRepository
 {
     public string JsonGameSettings { get; set; }
     public string JsonGameSequences { get; set; }
