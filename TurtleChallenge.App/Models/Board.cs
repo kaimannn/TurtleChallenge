@@ -10,18 +10,23 @@ public class Board
 
     public Position[,] Cells { get; set; }
 
-    public void Initialize(IEnumerable<Mine> mines, Exit exit, int sizeX, int sizeY) => Fill(mines, exit, sizeX, sizeY);
+    public void Initialize(IEnumerable<Mine> mines, Exit exit, int sizeX, int sizeY)
+    {
+        SizeX = sizeX;
+        SizeY = sizeY;
+        Fill(mines, exit);
+    }
 
-    public void Initialize(IEnumerable<Mine> mines, Exit exit) => Fill(mines, exit, SizeX, SizeY);
+    public void Initialize(IEnumerable<Mine> mines, Exit exit) => Fill(mines, exit);
 
-    private void Fill(IEnumerable<Mine> mines, Exit exit, int sizeX, int sizeY)
+    private void Fill(IEnumerable<Mine> mines, Exit exit)
     {
         try
         {
-            Cells = new Position[sizeX, sizeY];
+            Cells = new Position[SizeX, SizeY];
 
-            for (int x = 0; x < sizeX; x++)
-                for (int y = 0; y < sizeY; y++)
+            for (int x = 0; x < SizeX; x++)
+                for (int y = 0; y < SizeY; y++)
                     Cells[x, y] = new Position();
 
             foreach (var mine in mines)
