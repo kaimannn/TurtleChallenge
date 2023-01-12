@@ -4,7 +4,7 @@ using TurtleChallenge.App.Services;
 
 string jsonFileSettings = "game-settings.json";
 string jsonFileSequences = "game-moves.json";
-int exitCode = -1;
+int exitCode = 0;
 
 try
 {
